@@ -13,14 +13,13 @@ import java.io.Serializable;
 @Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Livro implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
-
-    @Serial
-    private static final long serialVersionUID = 1L;
 
     @ManyToOne
     @JoinColumn(name = "categoria_id")
