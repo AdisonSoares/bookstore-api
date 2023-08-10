@@ -15,17 +15,16 @@ import java.util.List;
 @Entity
 @Table(name="categoria")
 public class Categoria  implements Serializable {
-
     @Serial
     private static final long serialVersionUID = 1L;
-
-    @OneToMany(mappedBy = "categoria")
-    private List<Livro> livros = new ArrayList<>();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     private Integer id;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Livro> livros = new ArrayList<>();
 
     private String nome;
     private String descricao;
