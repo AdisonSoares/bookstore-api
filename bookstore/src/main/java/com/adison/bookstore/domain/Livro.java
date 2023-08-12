@@ -22,14 +22,15 @@ public class Livro implements Serializable {
     @EqualsAndHashCode.Include
     private Integer id;
 
+    private String titulo;
+    private String nome_autor;
+    private String texto;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    private String titulo;
-    private String nome_autor;
-    private String texto;
 
 }
 

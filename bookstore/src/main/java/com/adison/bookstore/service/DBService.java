@@ -23,11 +23,11 @@ public class DBService {
         Categoria categoria_2 = new Categoria(null, "Ficção Científica", "Livros de Ficção");
         Categoria categoria_3 = new Categoria(null, "Biografias", "Livros de Biografias");
 
-        Livro livro_1 = new Livro(null, categoria_1, "Clean code", "Robert C.Martin", "Loren ipsum");
-        Livro livro_2 = new Livro(null, categoria_1, "Engenharia de software", "Louis V. Gerstner", "Loren ipsum");
-        Livro livro_3 = new Livro(null, categoria_2, "Staw Wars", "George Lucas", "Loren ipsum");
-        Livro livro_4 = new Livro(null, categoria_2, "Elysium", "Neill Blomkamp", "Loren ipsum");
-        Livro livro_5 = new Livro(null, categoria_2, "Tron: o legado", "J.W. Rinzler", "Loren ipsum");
+        Livro livro_1 = new Livro(null, "Clean code", "Robert C.Martin", "Loren ipsum", categoria_1);
+        Livro livro_2 = new Livro(null, "Engenharia de software", "Louis V. Gerstner", "Loren ipsum", categoria_1);
+        Livro livro_3 = new Livro(null, "Staw Wars", "George Lucas", "Loren ipsum", categoria_2);
+        Livro livro_4 = new Livro(null, "Elysium", "Neill Blomkamp", "Loren ipsum", categoria_2);
+        Livro livro_5 = new Livro(null, "Tron: o legado", "J.W. Rinzler", "Loren ipsum", categoria_2);
 
         categoria_1.getLivros().addAll(Arrays.asList(livro_1, livro_2));
         categoria_2.getLivros().addAll(Arrays.asList(livro_3, livro_4, livro_5));

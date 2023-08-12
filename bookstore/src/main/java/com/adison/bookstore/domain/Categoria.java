@@ -23,11 +23,11 @@ public class Categoria  implements Serializable {
     @EqualsAndHashCode.Include
     private Integer id;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Livro> livros = new ArrayList<>();
-
     private String nome;
     private String descricao;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Livro> livros = new ArrayList<>();
 
     public Categoria(Integer id, String nome, String descricao){
         this.id = id;
