@@ -1,5 +1,6 @@
 package com.adison.bookstore.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +22,7 @@ public class Livro implements Serializable {
     @EqualsAndHashCode.Include
     private Integer id;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
