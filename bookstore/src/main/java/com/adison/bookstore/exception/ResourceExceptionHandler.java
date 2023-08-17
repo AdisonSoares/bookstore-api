@@ -14,5 +14,4 @@ public class ResourceExceptionHandler{
                 HttpStatus.NOT_FOUND.value(), e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
-
 }
