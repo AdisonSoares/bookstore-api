@@ -1,4 +1,4 @@
-package com.adison.bookstore.repositorie;
+package com.adison.bookstore.repository;
 
 import com.adison.bookstore.domain.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;

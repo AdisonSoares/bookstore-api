@@ -1,8 +1,9 @@
 package com.adison.bookstore.service;
 
 import com.adison.bookstore.domain.Categoria;
+import com.adison.bookstore.dto.CategoriaDTO;
 import com.adison.bookstore.exception.ObjectNotFoundException;
-import com.adison.bookstore.repositorie.CategoriaRepository;
+import com.adison.bookstore.repository.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,13 @@ public class CategoriaService {
 
     public Categoria create(Categoria categoria){
         categoria.setId(null);
+        return repository.save(categoria);
+    }
+
+    public Categoria update(Integer id, CategoriaDTO categoriaDTO) {
+        Categoria categoria = findById(id);
+        categoria.setNome(categoriaDTO.getNome());
+        categoria.setDescricao(categoriaDTO.getDescricao());
         return repository.save(categoria);
     }
 }

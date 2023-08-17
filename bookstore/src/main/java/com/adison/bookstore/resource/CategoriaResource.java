@@ -10,14 +10,13 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/categorias")
-public class CategoriaResources {
+@RequestMapping("/categorias")
+public class CategoriaResource {
     @Autowired
     private CategoriaService service;
-    @GetMapping(value = "/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Categoria> findById(@PathVariable Integer id){
         Categoria obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
@@ -38,5 +37,11 @@ public class CategoriaResources {
                 .buildAndExpand(categoria.getId())
                 .toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<CategoriaDTO> update(@PathVariable Integer id, @RequestBody CategoriaDTO categoriaDTO){
+        Categoria newCategoria = service.update(id, categoriaDTO);
+        return ResponseEntity.ok().body(new CategoriaDTO(newCategoria));
     }
 }
