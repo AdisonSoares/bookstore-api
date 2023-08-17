@@ -1,4 +1,4 @@
-package com.adison.bookstore.exceptions;
+package com.adison.bookstore.exception;
 
 import jakarta.servlet.ServletRequest;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.adison.bookstore.repositories;
+package com.adison.bookstore.repositorie;
 
 import com.adison.bookstore.domain.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;

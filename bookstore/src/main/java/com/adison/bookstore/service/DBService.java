@@ -2,10 +2,9 @@ package com.adison.bookstore.service;
 
 import com.adison.bookstore.domain.Categoria;
 import com.adison.bookstore.domain.Livro;
-import com.adison.bookstore.repositories.CategoriaRepository;
-import com.adison.bookstore.repositories.LivroRepository;
+import com.adison.bookstore.repositorie.CategoriaRepository;
+import com.adison.bookstore.repositorie.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

@@ -14,7 +14,7 @@ import java.util.List;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name="categoria")
-public class Categoria  implements Serializable {
+    public class Categoria  implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
