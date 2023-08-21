@@ -2,8 +2,9 @@ package com.adison.bookstore.service;
 
 import com.adison.bookstore.domain.Categoria;
 import com.adison.bookstore.dto.CategoriaDTO;
-import com.adison.bookstore.exception.ObjectNotFoundException;
 import com.adison.bookstore.repository.CategoriaRepository;
+import com.adison.bookstore.service.exception.DataIntegrityViolationException;
+import com.adison.bookstore.service.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +40,11 @@ public class CategoriaService {
 
     public void delete(Integer id) {
         findById(id);
-        repository.deleteById(id);
+        try {
+            repository.deleteById(id);
+        } catch (org.springframework.dao.DataIntegrityViolationException e){
+            throw new DataIntegrityViolationException("Categoria possui livros associados não pode ser deletada!");
+        }
     }
 }
 

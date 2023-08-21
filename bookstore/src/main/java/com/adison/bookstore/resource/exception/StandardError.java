@@ -1,4 +1,4 @@
-package com.adison.bookstore.exception;
+package com.adison.bookstore.resource.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

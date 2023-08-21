@@ -1,4 +1,4 @@
-package com.adison.bookstore.exception;
+package com.adison.bookstore.service.exception;
 
 import java.io.Serial;
 

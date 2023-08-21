@@ -1,5 +1,7 @@
-package com.adison.bookstore.exception;
+package com.adison.bookstore.resource.exception;
 
+import com.adison.bookstore.service.exception.DataIntegrityViolationException;
+import com.adison.bookstore.service.exception.ObjectNotFoundException;
 import jakarta.servlet.ServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,5 +15,12 @@ public class ResourceExceptionHandler{
         StandardError error = new StandardError(System.currentTimeMillis(),
                 HttpStatus.NOT_FOUND.value(), e.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    public ResponseEntity<StandardError> dataIntegrityViolationException(DataIntegrityViolationException e, ServletRequest request){
+        StandardError error = new StandardError(System.currentTimeMillis(),
+                HttpStatus.BAD_REQUEST.value(), e.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 }
