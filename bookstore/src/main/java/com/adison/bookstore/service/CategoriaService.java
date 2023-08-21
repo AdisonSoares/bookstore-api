@@ -1,7 +1,7 @@
 package com.adison.bookstore.service;
 
 import com.adison.bookstore.domain.Categoria;
-import com.adison.bookstore.dto.CategoriaDTO;
+import com.adison.bookstore.dto.CategoriaDto;
 import com.adison.bookstore.repository.CategoriaRepository;
 import com.adison.bookstore.service.exception.DataIntegrityViolationException;
 import com.adison.bookstore.service.exception.ObjectNotFoundException;
@@ -31,7 +31,7 @@ public class CategoriaService {
         return repository.save(categoria);
     }
 
-    public Categoria update(Integer id, CategoriaDTO categoriaDTO) {
+    public Categoria update(Integer id, CategoriaDto categoriaDTO) {
         Categoria categoria = findById(id);
         categoria.setNome(categoriaDTO.getNome());
         categoria.setDescricao(categoriaDTO.getDescricao());
