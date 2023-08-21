@@ -1,7 +1,7 @@
 package com.adison.bookstore.resource;
 
 import com.adison.bookstore.domain.Categoria;
-import com.adison.bookstore.dto.CategoriaDTO;
+import com.adison.bookstore.dto.CategoriaDto;
 import com.adison.bookstore.service.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +22,9 @@ public class CategoriaResource {
         return ResponseEntity.ok().body(obj);
     }
     @GetMapping
-    public ResponseEntity<List<CategoriaDTO>> findAll(){
+    public ResponseEntity<List<CategoriaDto>> findAll(){
         List<Categoria> list = service.findAll();
-        List<CategoriaDTO> listDTO = list.stream().map(CategoriaDTO::new).toList();
+        List<CategoriaDto> listDTO = list.stream().map(CategoriaDto::new).toList();
         return ResponseEntity.ok().body(listDTO);
     }
 
@@ -40,9 +40,9 @@ public class CategoriaResource {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CategoriaDTO> update(@PathVariable Integer id, @RequestBody CategoriaDTO categoriaDTO){
+    public ResponseEntity<CategoriaDto> update(@PathVariable Integer id, @RequestBody CategoriaDto categoriaDTO){
         Categoria newCategoria = service.update(id, categoriaDTO);
-        return ResponseEntity.ok().body(new CategoriaDTO(newCategoria));
+        return ResponseEntity.ok().body(new CategoriaDto(newCategoria));
     }
 
     @DeleteMapping("/{id}")
