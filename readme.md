@@ -1,8 +1,8 @@
 # Bookstore application
 
-O projeto consiste em um sistema de gerenciamento de livros por categorias, mostrando as categorias disponíveis
-de livros na base de dados na nuvem, tendo um crud completo da categoria, existem validações, seleção de 
-livros para serem lidos em tela podendo criar um novo livro.
+O projeto consiste em um sistema de gerenciamento de livros, mostrando as categorias disponíveis
+de livros na base de dados na nuvem tendo um crud completo, existem validações, seleção de 
+livros para serem lidos, podendo criar um novo livro.
 
 Conceitos trabalhados nesse projeto: Boas práticas de engenharia de software, tratamento de exceptions personalizadas, 
 padrões de projeto, api rest, consumir a api com o front angular, deploy por meio do github pages.
