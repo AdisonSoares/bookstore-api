@@ -1,5 +1,6 @@
 package com.adison.bookstore.service;
 
+import com.adison.bookstore.domain.Categoria;
 import com.adison.bookstore.domain.Livro;
 import com.adison.bookstore.repository.LivroRepository;
 import com.adison.bookstore.service.exception.ObjectNotFoundException;
@@ -38,6 +39,13 @@ public class LivroService {
         newObj.setTitulo(obj.getTitulo());
         newObj.setNome_autor(obj.getNome_autor());
         newObj.setTexto(obj.getTexto());
+    }
+
+    public Livro create(Integer id_cat, Livro obj) {
+        obj.setId(null);
+        Categoria cat = categoriaService.findById(id_cat);
+        obj.setCategoria(cat);
+        return repository.save(obj);
     }
 }
 
