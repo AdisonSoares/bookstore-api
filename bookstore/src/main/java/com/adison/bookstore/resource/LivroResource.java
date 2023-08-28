@@ -3,6 +3,9 @@ package com.adison.bookstore.resource;
 import com.adison.bookstore.domain.Livro;
 import com.adison.bookstore.dto.LivroDto;
 import com.adison.bookstore.service.LivroService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,20 +36,20 @@ public class LivroResource {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Livro> update(@PathVariable Integer id, @RequestBody Livro obj){
+    public ResponseEntity<Livro> update(@PathVariable Integer id, @Valid @RequestBody Livro obj){
         Livro newObj = service.update(id, obj);
         return ResponseEntity.ok().body(newObj);
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Livro> updatePatch(@PathVariable Integer id, @RequestBody Livro obj){
+    public ResponseEntity<Livro> updatePatch( @PathVariable Integer id, @Valid @RequestBody Livro obj){
         Livro newObj = service.update(id, obj);
         return ResponseEntity.ok().body(newObj);
     }
 
     @PostMapping
-    public ResponseEntity<Livro> create(@RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
-                                        @RequestBody Livro obj){
+    public ResponseEntity<Livro> create( @RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
+                                       @Valid @RequestBody Livro obj){
         Livro newObj = service.create(id_cat, obj);
         URI uri = ServletUriComponentsBuilder
                 .fromCurrentContextPath()
