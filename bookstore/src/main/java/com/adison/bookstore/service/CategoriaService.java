@@ -21,23 +21,19 @@ public class CategoriaService {
         return obj.orElseThrow(() -> new ObjectNotFoundException(
                 "Objeto não encontrado! id:" + id + ", Tipo: "+Categoria.class.getName()));
     }
-
     public List<Categoria> findAll(){
         return repository.findAll();
     }
-
     public Categoria create(Categoria categoria){
         categoria.setId(null);
         return repository.save(categoria);
     }
-
     public Categoria update(Integer id, CategoriaDto categoriaDTO) {
         Categoria categoria = findById(id);
         categoria.setNome(categoriaDTO.getNome());
         categoria.setDescricao(categoriaDTO.getDescricao());
         return repository.save(categoria);
     }
-
     public void delete(Integer id) {
         findById(id);
         try {

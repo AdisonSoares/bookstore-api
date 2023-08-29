@@ -30,7 +30,6 @@ public class CategoriaResource {
         List<CategoriaDto> listDTO = list.stream().map(CategoriaDto::new).toList();
         return ResponseEntity.ok().body(listDTO);
     }
-
     @PostMapping
     public ResponseEntity<Categoria> create(@Valid @RequestBody Categoria categoria){
         categoria = service.create(categoria);
@@ -41,13 +40,11 @@ public class CategoriaResource {
                 .toUri();
         return ResponseEntity.created(uri).build();
     }
-
     @PutMapping("/{id}")
     public ResponseEntity<CategoriaDto> update(@Valid @PathVariable Integer id, @RequestBody CategoriaDto categoriaDTO){
         Categoria newCategoria = service.update(id, categoriaDTO);
         return ResponseEntity.ok().body(new CategoriaDto(newCategoria));
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         service.delete(id);
