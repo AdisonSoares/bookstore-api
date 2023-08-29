@@ -42,13 +42,13 @@ public class LivroResource {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Livro> updatePatch( @PathVariable Integer id, @Valid @RequestBody Livro obj){
+    public ResponseEntity<Livro> updatePatch(@PathVariable Integer id, @Valid @RequestBody Livro obj){
         Livro newObj = service.update(id, obj);
         return ResponseEntity.ok().body(newObj);
     }
 
     @PostMapping
-    public ResponseEntity<Livro> create( @RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
+    public ResponseEntity<Livro> create(@RequestParam(value = "categoria", defaultValue = "0") Integer id_cat,
                                        @Valid @RequestBody Livro obj){
         Livro newObj = service.create(id_cat, obj);
         URI uri = ServletUriComponentsBuilder
