@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/livros")
+@CrossOrigin(origins = "http://localhost:4200")
 public class LivroResource {
 
     @Autowired

@@ -27,7 +27,7 @@ import org.hibernate.validator.constraints.Length;
     private Integer id;
 
     @NotEmpty(message = "Nome é obrigatório!")
-    @Length(min = 3, max = 100, message = "O campo nome deve ter de 3 a 100 caracteres!")
+    @Length(min = 3, max = 100, message = "O campo nome é obrigatório!")
     private String nome;
     
     @NotEmpty(message = "A descrição é obrigatória!")
