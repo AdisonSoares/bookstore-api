@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer{
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://adisonsoares.github.io/bookstore-api_front/")
+                .allowedOrigins("https://adisonsoares.github.io")
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
     }
 }
