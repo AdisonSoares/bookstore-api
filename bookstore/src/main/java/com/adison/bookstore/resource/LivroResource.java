@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/livros")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://adisonsoares.github.io/bookstore-api_front/")
 public class LivroResource {
 
     @Autowired
